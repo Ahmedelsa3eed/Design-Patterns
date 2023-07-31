@@ -22,7 +22,7 @@ public class Demo {
         // The final product is often retrieved from a builder object, since
         // Director is not aware and not dependent on concrete builders and
         // products.
-        Car car = builder.getResult();
+        Car car = builder.build();
         System.out.println("Car built:\n" + car.getCarType());
 
 
@@ -30,7 +30,7 @@ public class Demo {
 
         // Director may know several building recipes.
         director.constructSportsCar(manualBuilder);
-        Manual carManual = manualBuilder.getResult();
+        Manual carManual = manualBuilder.build();
         System.out.println("\nCar manual built:\n" + carManual.print());
     }
 

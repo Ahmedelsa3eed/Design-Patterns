@@ -10,10 +10,10 @@ import Creational.builder.components.TripComputer;
  * Builder interface defines all possible ways to configure a product.
  */
 public interface Builder {
-    void setCarType(CarType type);
-    void setSeats(int seats);
-    void setEngine(Engine engine);
-    void setTransmission(Transmission transmission);
-    void setTripComputer(TripComputer tripComputer);
-    void setGPSNavigator(GPSNavigator gpsNavigator);
+    Builder setCarType(CarType type);
+    Builder setSeats(int seats);
+    Builder setEngine(Engine engine);
+    Builder setTransmission(Transmission transmission);
+    Builder setTripComputer(TripComputer tripComputer);
+    Builder setGPSNavigator(GPSNavigator gpsNavigator);
 }

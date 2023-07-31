@@ -15,7 +15,7 @@ import Creational.builder.components.TripComputer;
  * built a car. This allows to produce manuals for specific car models,
  * configured with different features.
  */
-public class CarManualBuilder implements Builder{
+public class CarManualBuilder implements Builder {
     private CarType type;
     private int seats;
     private Engine engine;
@@ -24,36 +24,42 @@ public class CarManualBuilder implements Builder{
     private GPSNavigator gpsNavigator;
 
     @Override
-    public void setCarType(CarType type) {
+    public CarManualBuilder setCarType(CarType type) {
         this.type = type;
+        return this;
     }
 
     @Override
-    public void setSeats(int seats) {
+    public CarManualBuilder setSeats(int seats) {
         this.seats = seats;
+        return this;
     }
 
     @Override
-    public void setEngine(Engine engine) {
+    public CarManualBuilder setEngine(Engine engine) {
         this.engine = engine;
+        return this;
     }
 
     @Override
-    public void setTransmission(Transmission transmission) {
+    public CarManualBuilder setTransmission(Transmission transmission) {
         this.transmission = transmission;
+        return this;
     }
 
     @Override
-    public void setTripComputer(TripComputer tripComputer) {
+    public CarManualBuilder setTripComputer(TripComputer tripComputer) {
         this.tripComputer = tripComputer;
+        return this;
     }
 
     @Override
-    public void setGPSNavigator(GPSNavigator gpsNavigator) {
+    public CarManualBuilder setGPSNavigator(GPSNavigator gpsNavigator) {
         this.gpsNavigator = gpsNavigator;
+        return this;
     }
 
-    public Manual getResult() {
+    public Manual build() {
         return new Manual(type, seats, engine, transmission, tripComputer, gpsNavigator);
     }
 }
